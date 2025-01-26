@@ -1,0 +1,71 @@
+https://www.hackerrank.com/challenges/weather-observation-station-4/
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;
+
+https://hackerrank.com/challenges/weather-observation-station-5/
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) ASC,CITY ASC LIMIT 1;
+
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC,CITY ASC LIMIT 1;
+
+https://www.hackerrank.com/challenges/weather-observation-station-6/
+select distinct city from station where city like "a%" or city like "e%" or city like "i%" or city like "o%" or city like "u%";
+
+SELECT DISTINCT CITY FROM STATION WHERE (LEFT(CITY,1)) IN ("a", "e", "i", "o","u");
+
+https://www.hackerrank.com/challenges/weather-observation-station-7
+select distinct city from station where city like "%a" or city like "%e" or city like "%i" or city like "%o" or city like "%u";
+
+select distinct city from station where (right(city,1)) in ("a","i","e","o","u")
+
+https://www.hackerrank.com/challenges/weather-observation-station-8/
+select distinct city from station where (left(city,1)) in ("a","e","i","o","u") and (right(city,1)) in ("a","e","i","o","u");
+
+https://www.hackerrank.com/challenges/weather-observation-station-9/
+select distinct city from station where (left(city,1)) not in ("a","e","i","o","u");
+
+https://www.hackerrank.com/challenges/weather-observation-station-11
+select distinct city from station where (left(city,1)) not in ("a","e","i","o","u") or (right(city,1)) not in ("a","e","i","o","u");
+
+https://www.hackerrank.com/challenges/weather-observation-station-12
+select distinct city from station where (left(city,1)) not in ("a","e","i","o","u") and (right(city,1)) not in ("a","e","i","o","u");
+
+https://www.hackerrank.com/challenges/more-than-75-marks/
+select name from students where marks>75 order by (right(name,3)) asc,ID ASC;
+
+https://www.hackerrank.com/challenges/name-of-employees/
+select name from employee order by name;
+
+https://www.hackerrank.com/challenges/salary-of-employees
+select name from employee where salary > 2000 and months <10 order by employee_id;
+
+https://www.hackerrank.com/challenges/what-type-of-triangle/
+
+select 
+case
+when (A+B) <= C OR (B+C) <=A OR (C+A) <=B THEN "Not A Triangle" 
+WHEN A=B AND B=C AND C=A THEN "Equilateral" 
+when  A !=B AND B!=C AND C!=A THEN "Scalene" 
+when (A=B)!=C AND (B=C)!=A AND (A=C)!=B THEN "Isosceles" 
+end as triangle 
+from TRIANGLES;
+
+https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/
+select count(name) from city where population > 100000
+
+https://www.hackerrank.com/challenges/revising-aggregations-sum/
+select sum(population) from city where district ="California";
+
+select avg(population) from city where district ="California";
+
+https://www.hackerrank.com/challenges/average-population/
+select round(avg(population)) from city;
+
+https://www.hackerrank.com/challenges/japan-population/
+select sum(population) from city where countrycode="JPN";
+
+select max(population)- min(population) from city;
+
+https://www.hackerrank.com/challenges/the-blunder
+select ceil(avg(salary)-avg(replace(salary,0,''))) from employees;
+
+
+
