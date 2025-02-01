@@ -67,5 +67,23 @@ select max(population)- min(population) from city;
 https://www.hackerrank.com/challenges/the-blunder
 select ceil(avg(salary)-avg(replace(salary,0,''))) from employees;
 
+https://www.hackerrank.com/challenges/earnings-of-employees/problem
+select max(salary * months) as earnings , count(employee_id) from employee where salary * months =(SELECT max(salary*months) from employee);
+
+https://www.hackerrank.com/challenges/weather-observation-station-2/problem
+select round(sum(lat_n),2) as lat ,round(sum(long_w),2) as lon from station;
+
+https://www.hackerrank.com/challenges/weather-observation-station-13/problem
+select round(sum(lat_n),4) from station where lat_n between 38.7880 and 137.2345;
+
+https://www.hackerrank.com/challenges/weather-observation-station-14/problem
+select round(max(lat_n),4) from station where lat_n< 137.2345;
+
+https://www.hackerrank.com/challenges/weather-observation-station-15/problem
+select round(long_w,4) from station where lat_n=(select max(lat_n) from station where lat_n<137.2345);
+
+https://www.hackerrank.com/challenges/weather-observation-station-16/problem
+select round(min(lat_n),4) from station where lat_N>38.7780;
 
 
+select round(long_w,4) from station where lat_n =(select min(lat_n) from station where lat_n>38.7780);
